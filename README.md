@@ -2,7 +2,6 @@
 
 ***First, look at the picture to understand object properties and methods.***
 
-<img src="https://devsnest-custom-images.s3.ap-south-1.amazonaws.com/obj">
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*_3XepNDk6wDs18gvzeOHVA.jpeg">
 
 
-![Uploading image.png…](https://devsnest-custom-images.s3.ap-south-1.amazonaws.com/obj)
