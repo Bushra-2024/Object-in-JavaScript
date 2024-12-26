@@ -5,6 +5,9 @@
 <img src="https://miro.medium.com/v2/resize:fit:1400/1*_3XepNDk6wDs18gvzeOHVA.jpeg">
 
 
+![image](https://github.com/user-attachments/assets/ef314f1d-b11e-44c9-a3c6-fb23aca2900d)
+
+
 An `object~ in JavaScript is a collection of properties. Each property is made up of a key (also called a name) and a value.
 
     - The key is a string (or a symbol), and the value can be any type, including primitive values (like numbers or strings), other objects, or functions. 
