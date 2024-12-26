@@ -84,3 +84,126 @@ console.log(age);  // Output: 30
 
 
 <img src="https://i.ytimg.com/vi/kX5NyqXtl6Y/maxresdefault.jpg">
+
+
+Here’s an overview of three commonly used **Object methods** in JavaScript, along with explanations and examples:
+
+---
+
+### 1. **`Object.keys()`**
+- **Description**: Returns an array of all the keys (property names) of the object.
+- When you want to get a list of the property names in an object.
+
+**Example**:
+```javascript
+const person = { name: "Alice", age: 25, city: "New York" };
+
+const keys = Object.keys(person);
+console.log(keys); // Output: ["name", "age", "city"]
+```
+
+---
+
+### 2. **`Object.values()`**
+- **Description**: Returns an array of all the values of the object.
+- When you want to extract only the property values from an object.
+
+**Example**:
+```javascript
+const person = { name: "Alice", age: 25, city: "New York" };
+
+const values = Object.values(person);
+console.log(values); // Output: ["Alice", 25, "New York"]
+```
+
+---
+
+### 3. **`Object.entries()`**
+- **Description**: Returns an array of key-value pairs from the object, where each key-value pair is an array.
+- When you need both keys and values, often for iterating through the object.
+
+**Example**:
+```javascript
+const person = { name: "Alice", age: 25, city: "New York" };
+
+const entries = Object.entries(person);
+console.log(entries); 
+// Output: [["name", "Alice"], ["age", 25], ["city", "New York"]]
+
+// Iterating through entries
+entries.forEach(([key, value]) => {
+    console.log(`${key}: ${value}`);
+});
+// Output:
+// name: Alice
+// age: 25
+// city: New York
+```
+
+---
+
+
+### **What is Destructuring in Objects?**
+- Destructuring allows you to **extract properties from an object and assign them to variables**, making your code cleaner and easier to understand.
+
+---
+
+### **Basic Syntax**:
+```javascript
+const { key1, key2 } = objectName;
+```
+
+---
+
+### **Example 1: Basic Destructuring**
+```javascript
+const person = { name: "Alice", age: 25, city: "New York" };
+
+const { name, age } = person;
+
+console.log(name); // Output: Alice
+console.log(age);  // Output: 25
+```
+
+---
+
+### **Example 2: Renaming Variables**
+You can rename the variables while destructuring if you don’t want to use the exact property names:
+```javascript
+const person = { name: "Alice", age: 25, city: "New York" };
+
+const { name: fullName, age: yearsOld } = person;
+
+console.log(fullName); // Output: Alice
+console.log(yearsOld); // Output: 25
+```
+
+---
+
+### **Example 3: Providing Default Values**
+If a property doesn’t exist in the object, you can set a default value:
+```javascript
+const person = { name: "Alice", age: 25 };
+
+const { name, city = "Unknown" } = person;
+
+console.log(name); // Output: Alice
+console.log(city); // Output: Unknown
+```
+
+---
+
+### **Example 4: Nested Destructuring**
+If an object contains another object, you can destructure the nested properties:
+```javascript
+const person = { 
+    name: "Alice", 
+    address: { city: "New York", zip: "10001" } 
+};
+
+const { address: { city, zip } } = person;
+
+console.log(city); // Output: New York
+console.log(zip);  // Output: 10001
+```
+
