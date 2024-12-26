@@ -31,5 +31,6 @@ console.log(person.name); // Output: "John"
 Objects are flexible and can store multiple types of data, making them great for modeling real-world entities.
 
 
+# Object Structure
 <img src="https://miro.medium.com/v2/resize:fit:720/1*IlP9iTPaGkx4PWYwHejDGw.png">
 
