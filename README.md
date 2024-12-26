@@ -43,14 +43,13 @@ If the object has a method (a function as a property), you can call it to displa
 ```js
 const person = {
   name: "John",
-  age: 30,
-  greet: function() {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
-  }
+  age: 30
 };
 
-// Calling the method to show the person's information
-person.greet(); // Output: Hello, my name is John and I am 30 years old.
+// Accessing properties using dot notation
+console.log(person.name); // Output: John
+console.log(person.age);  // Output: 30
+
 ```
 
 2. Using Bracket Notation
