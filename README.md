@@ -206,3 +206,24 @@ console.log(city); // Output: New York
 console.log(zip);  // Output: 10001
 ```
 
+
+## `for...in`
+
+The JavaScript for in statement loops through the properties of an Object and It allows you to access each key or property name of an object.:
+
+```
+Example -
+for (key in object) {
+  // code block to be executed
+}
+```
+
+### difference between `for...in` and `for...of`
+
+**`for...of`**: Goes through **values** (items) in an array or other collections.  
+Example: `for (let value of [10, 20, 30])` → gives `10`, `20`, `30`.
+
+**`for...in`**: Goes through **keys** (property names) in an object.  
+Example: `for (let key in {a: 1, b: 2})` → gives `'a'`, `'b'`.  
+
+Use **`for...of`** for arrays. Use **`for...in`** for objects.
