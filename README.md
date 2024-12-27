@@ -226,4 +226,3 @@ Example: `for (let value of [10, 20, 30])` → gives `10`, `20`, `30`.
 **`for...in`**: Goes through **keys** (property names) in an object.  
 Example: `for (let key in {a: 1, b: 2})` → gives `'a'`, `'b'`.  
 
-Use **`for...of`** for arrays. Use **`for...in`** for objects.
