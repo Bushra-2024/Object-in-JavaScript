@@ -228,3 +228,193 @@ Example: `for (let key in {a: 1, b: 2})` → gives `'a'`, `'b'`.
 
 
 -----------
+
+# Keyword `this`
+The `this` keyword in JavaScript is a special reference that changes based on how and where it is used. It refers to the context in which the current code is being executed. 
+
+---
+
+### **What is `this` in JavaScript?**
+`this` is a dynamic keyword that refers to an object, and its value depends on:
+1. **Where the code is written** (global scope, function, or class).
+2. **How the function is called** (as a method, standalone, or with `new`).
+
+---
+
+### **How Does `this` Work in Different Contexts?**
+
+1. **Global Scope**:
+   - In the global context (outside any function or object):
+     - In **non-strict mode**, `this` refers to the **global object** (`window` in browsers, `global` in Node.js).
+     - In **strict mode**, `this` is `undefined`.
+
+   ```javascript
+   console.log(this); // In browser: Window object
+   "use strict";
+   console.log(this); // undefined
+   ```
+
+2. **Inside Regular Functions**:
+   - **Non-strict mode**: `this` refers to the global object.
+   - **Strict mode**: `this` is `undefined`.
+
+   ```javascript
+   function showThis() {
+     console.log(this);
+   }
+   showThis(); // In browser: Window object (non-strict), undefined (strict)
+   ```
+
+3. **Object Methods**:
+   - When a function is called as a method of an object, `this` refers to the **object** that owns the method.
+
+   ```javascript
+   const obj = {
+     name: "JavaScript",
+     showThis: function () {
+       console.log(this); // Refers to obj
+     },
+   };
+   obj.showThis(); // Logs obj
+   ```
+
+4. **Arrow Functions**:
+   - Arrow functions **don’t have their own `this`**. Instead, they inherit `this` from the **surrounding lexical scope** (where the arrow function is defined).
+
+   ```javascript
+   const obj = {
+     name: "Arrow",
+     showThis: () => {
+       console.log(this); // Refers to the outer context (global object or undefined in strict mode)
+     },
+   };
+   obj.showThis(); // Logs Window (or undefined in strict mode)
+   ```
+
+
+
+
+The `this` keyword in JavaScript is a special keyword that refers to the **object that is executing the current piece of code**. Its behavior varies depending on where and how it's used. 
+
+Let’s break it down in detail, including how `this` behaves with **anonymous functions**:
+
+---
+
+### **1. What is `this`?**
+- The `this` keyword refers to the **context** in which a function is invoked.
+- The value of `this` is determined at **runtime**, based on how and where the function is called.
+
+---
+
+### **2. Behavior of `this` in Different Scenarios**
+
+#### **Global Context**
+In the global context (outside any function):
+- In browsers, `this` refers to the **global object** (`window`).
+- In Node.js, it refers to an empty object (`{}`).
+
+```javascript
+console.log(this); // In browsers: Window, in Node.js: {}
+```
+
+---
+
+#### **Inside a Regular Function**
+1. **Non-Strict Mode**:  
+   `this` refers to the **global object** (e.g., `window` in browsers).
+   
+2. **Strict Mode**:  
+   `this` is `undefined`.
+
+```javascript
+// Non-strict mode
+function regularFunction() {
+  console.log(this); // Logs: Window (or global object)
+}
+regularFunction();
+
+// Strict mode
+"use strict";
+function strictFunction() {
+  console.log(this); // Logs: undefined
+}
+strictFunction();
+```
+
+---
+
+#### **Inside an Object Method**
+When a function is called as a **method of an object**, `this` refers to the object that owns the method.
+
+```javascript
+const obj = {
+  name: "Example",
+  showThis: function () {
+    console.log(this); // Logs: obj
+  },
+};
+obj.showThis();
+```
+
+---
+
+#### **Inside an Arrow Function**
+Arrow functions do **not** have their own `this`. They inherit `this` from the surrounding **lexical scope** (where the function is defined, not called).
+
+```javascript
+const obj = {
+  name: "Example",
+  arrowFunc: () => {
+    console.log(this); // Logs: Window (or global object in Node.js)
+  },
+};
+obj.arrowFunc();
+```
+
+If an arrow function is nested inside another function, it uses the `this` value of the outer function's context.
+
+---
+
+#### **In a Class**
+In classes, `this` refers to the **instance of the class**.
+
+```javascript
+class Example {
+  constructor(name) {
+    this.name = name;
+  }
+  showThis() {
+    console.log(this); // Logs: instance of Example
+  }
+}
+const instance = new Example("Example");
+instance.showThis();
+```
+
+---
+
+#### **In Anonymous Functions**
+The value of `this` in an **anonymous function** depends on how the function is called:
+  1. **Called in Global Scope**:  
+   - Non-strict mode: `this` refers to the global object (`window`).
+   - Strict mode: `this` is `undefined`.
+
+    ```javascript
+     const anonFunc = function () {
+     console.log(this); // Logs: Window (non-strict) or undefined (strict)
+      };
+     anonFunc();
+     ```
+
+  2. **Used as a Method**:  
+   If assigned to an object and then called, `this` refers to the object.
+
+    ```javascript
+    const obj = {
+    method: function () {
+    console.log(this); // Logs: obj
+    },
+    };
+    obj.method();
+    ```
+
