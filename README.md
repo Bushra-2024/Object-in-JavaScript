@@ -294,7 +294,8 @@ The `this` keyword in JavaScript is a special reference that changes based on ho
 5. **In Anonymous Functions**
 The value of `this` in an **anonymous function** depends on how the function is called:
 
-  1. **Called in Global Scope**:  
+---
+ 1. **Called in Global Scope**:  
    - Non-strict mode: `this` refers to the global object (`window`).
    - Strict mode: `this` is `undefined`.
 
@@ -305,7 +306,7 @@ console.log(this); // Logs: Window (non-strict) or undefined (strict)
 anonFunc();
 ```
 
-  2. **Used as a Method**:  
+ 2. **Used as a Method**:  
    If assigned to an object and then called, `this` refers to the object.
 
 ```javascript
