@@ -297,22 +297,22 @@ The value of `this` in an **anonymous function** depends on how the function is 
    - Non-strict mode: `this` refers to the global object (`window`).
    - Strict mode: `this` is `undefined`.
 
-    ```javascript
-     const anonFunc = function () {
-     console.log(this); // Logs: Window (non-strict) or undefined (strict)
-      };
-     anonFunc();
-     ```
+```javascript
+const anonFunc = function () {
+console.log(this); // Logs: Window (non-strict) or undefined (strict)
+};
+anonFunc();
+```
 
   2. **Used as a Method**:  
    If assigned to an object and then called, `this` refers to the object.
 
-    ```javascript
-    const obj = {
-    method: function () {
-    console.log(this); // Logs: obj
-    },
-    };
-    obj.method();
-    ```
+```javascript
+const obj = {
+method: function () {
+console.log(this); // Logs: obj
+},
+};
+obj.method();
+```
 
